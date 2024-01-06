@@ -1,0 +1,78 @@
+.projects{
+    min-height: 100vh;
+
+}
+
+.project{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 0;
+    background-color: white;
+    font-size: 1.5em;
+    transition: all 0.2s ease-in-out;
+}
+
+.projects h2{
+    color: white;
+}
+
+.project_title{
+    /* background-image: radial-gradient(circle at top left, yellow, rgb(255, 165, 0) 10%);
+        background-clip: text;
+        color: transparent;
+        font-size: 1.5em; */
+}
+
+.project:nth-child(2){
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+   
+}
+
+.project:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+.project:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent); */
+    /* background-color: white; */
+    /* background-color: black;
+    color:white; */
+    border-radius: 10px;
+    transform: scaleY(1.05);
+    border: 5px solid;
+        border-image-source: linear-gradient(to bottom right, yellow, orange, transparent, transparent, transparent, orange, yellow);
+        border-image-slice: 1;
+
+        & .project_title{
+            
+            /* border-bottom: 5px solid;
+                border-image-source: linear-gradient(to bottom right, yellow, orange, transparent, transparent, transparent, orange, yellow);
+                border-image-slice: 1; */
+        }
+}
+
+.project a{
+    color: orange;
+}
+.project_title {
+    font-size: 1.5em;
+    margin-left: 10px;
+    letter-spacing: 2px;
+}
+
+.project ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.project ul li{
+    list-style-type: none;
+    border: 1px black solid;
+    border-radius: 7px;
+    background-color: darkgray;
+    
+}

@@ -1,0 +1,54 @@
+.about_me{
+    min-height: 100vh;
+    color: black;
+    border-radius: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+h2{
+    padding: 15px;
+    background-color: black;
+    color: white;
+}
+
+.about_me_title{
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 1.5em;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    /* font-weight: 00; */
+    border-left: 2px solid white;
+    /* background-color: black; */
+    padding-left: 5px;
+    transition: all 0.2s ease-in-out;}
+
+.about_me_title:hover {
+    border-left: 2px solid black;
+    padding-left: 10px;
+    letter-spacing: 0.50em; 
+    background-color: white;
+    background-image: radial-gradient(yellow, rgb(255, 165, 0));
+    background-clip: text;
+    color: transparent;
+    cursor: pointer;
+    /* transform: rotate(90deg); */
+}
+
+.about_me_info {
+   text-indent: 20px;
+   padding: 5px;
+   text-align: justify;
+    /* display: block; */
+    background-color: white;
+    border-radius: 10px;
+    color: black
+}
+
+.active_title {
+    background-image: radial-gradient(yellow, rgb(255, 165, 0));
+        background-clip: text;
+        color: transparent;
+}
+

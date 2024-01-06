@@ -1,0 +1,28 @@
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* .dot:nth-child(1){
+    animation: anim1 3s infinite ease-in-out;
+} */
+
+
+@keyframes anim1{
+    0% {
+        opacity: 0.5;
+        transform: scale(0.75);
+    }
+    50% {
+        opacity: 0.75;
+        transform: scale(1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}

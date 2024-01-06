@@ -1,0 +1,20 @@
+.contacts{
+    /* background-color: #151E3D; */
+    color: white;
+    padding-top:1%;
+    padding-bottom:1%;
+
+}
+
+.contacts_title{
+    background-color: black;
+    padding: 15px;
+    
+}
+
+.contacts_button:hover {
+    
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    
+    transform: scaleY(1.05);
+}
