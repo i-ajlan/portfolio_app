@@ -1,5 +1,4 @@
 import { useState, useEffect} from 'react';
-import './App.css';
 import {Contacts, Loading, Welcome, AboutMe, Projects, Header} from './components';
 
 function App() {
@@ -10,10 +9,10 @@ function App() {
   
   const [top, setTop] = useState(null);
   
-   useEffect(()=>{
-   setTimeout(()=>setIsLoading(false), 3000)
+  //  useEffect(()=>{
+  //  setTimeout(()=>setIsLoading(false), 3000)
     
-  },[])
+  // },[])
    
    const handleScroll = () => {
      console.log("work");

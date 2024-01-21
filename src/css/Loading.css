@@ -1,28 +1,144 @@
-.loading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 2.5em;
-    font-weight: 700;
+.loading_section,
+.loader::before,
+.loader::after {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
-/* .dot:nth-child(1){
-    animation: anim1 3s infinite ease-in-out;
-} */
+.loading_section{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.loader {
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(45deg);
+    background: white;
+}
 
 
-@keyframes anim1{
+
+.loader::before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 100px solid #FF3D00;
+    animation-name: prixClipFix; 
+}
+
+.loader::after{
+    content: '100%';
+    color: black;
+    font-size:3.25em;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    transform: rotate(-45deg);
+    animation-name: percentage;
+    animation-duration: 1s;
+}
+
+
+
+ @keyframes percentage {
+     0% {
+         content: "0%"
+     }
+
+     5% {
+         content: "5%"
+     }
+
+     10% {
+         content: "10%"
+     }
+
+     20% {
+         content: "20%"
+     }
+
+     30% {
+         content: "30%"
+     }
+
+     40% {
+         content: "40%"
+     }
+
+     50% {
+         content: "50%"
+     }
+
+     60% {
+         content: "60%"
+     }
+
+     70% {
+         content: "70%"
+     }
+
+     80% {
+         content: "80%"
+     }
+
+     90% {
+         content: "90%"
+     }
+
+     95% {
+         content: "95%"
+     }
+
+     96% {
+         content: "96%"
+     }
+
+     97% {
+         content: "97%"
+     }
+
+     98% {
+         content: "98%"
+     }
+
+     99% {
+         content: "99%"
+     }
+
+     100% {
+         content: "100%"
+     }
+ }
+@keyframes prixClipFix {
     0% {
-        opacity: 0.5;
-        transform: scale(0.75);
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+        border-color: black;
     }
+
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+        border-color:white;
+    }
+
     50% {
-        opacity: 0.75;
-        transform: scale(1);
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+        border-color: black;
     }
-    100%{
-        opacity: 1;
-        transform: scale(1.05);
+
+    75% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
     }
 }
