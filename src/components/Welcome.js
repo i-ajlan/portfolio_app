@@ -1,11 +1,10 @@
-import React from 'react'
 import ProfilePicture from '../images/profilePicture.png'
 import '../css/Welcome.css'
 
-export default function Welcome() {
+export default function Welcome({children}) {
   return (
     <div className='welcome'>
-        
+        {children}      
         <div className='welcome_body'>
             <div className='img'>
 
@@ -13,12 +12,13 @@ export default function Welcome() {
             </div>
             
 
-
-        <h1>
+        <div className='welcome_sentences'>
+           <p>
             Welcome to My Portfolio!<br/>
-        <span>Scroll down to learn more about me.</span>
-        </h1>
-        
+        </p>
+          <p>Scroll down to learn more about me</p>
+        </div>
+       
         </div>
     </div>
   )

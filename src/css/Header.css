@@ -1,25 +1,36 @@
 .header {
-    position: sticky;
-    top: 0;
-    
+    width: 100%;
     font-size: 1.5em;
-    background-color: white;
-    border-radius: 7px;
-    box-shadow: 0 5px 5px -5px;
-    z-index: 100;
 }
 
 .header_content{
     display: flex;
-    flex-direction: column;
+    /* background-color: yellow; */
     justify-content: space-between;
 }
 .header nav{
     display: none;
 }
 
+.button_header{
+    position: fixed !important; 
+    top: 0;
+    right: 0;
+    z-index: 999;
+}
+
 .show_nav{
     display: block !important;
+    /* position: absolute; */
+    position: fixed;
+    width: 200px;
+    top: 50px;
+    right: 25px;
+    box-shadow: 0 0 1em;
+    border-radius: 10px;
+    z-index: 999;
+    background-color: white;
+    font-size: 1.25em;
 }
 .header ul {
     display: flex;
@@ -38,9 +49,15 @@
     width: 100%;
     text-align: center;
 }
+.header li:first-child{
+    color: green;
+}
+.header li:last-child{
+    border-bottom: none;
+}
 .header li:hover {
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgb(193, 28, 28);
     letter-spacing: 0.15rem;
 }
 
@@ -48,8 +65,6 @@
     padding: 5px;
     font-size: 1.5em;
     transform: skewX(-25deg);
-    display: flex;
-    justify-content: space-between;
 }
 
 .header h1 {
@@ -59,14 +74,21 @@
 
 .header a {
     text-decoration: none;
-    color: black;
+}
+
+.header .link:first-child{
+    color:#3bedb7;
+}
+
+.header .link:nth-child(2){
+    color: #0b2a92;
 }
 
 .is_toggled{
     transform: rotate(90deg) !important;
 }
 
-@media (min-width: 768px){
+@media (min-width: 700px){
     .header{
         display: flex;
         justify-content: center;
@@ -83,10 +105,14 @@
         justify-content: space-between;
     }
 
-    .header ul{
+    /* .header_ */
+    .header .ul_row{
         flex-direction: row;
     }
-    .header nav{
+    .header .ul_column{
+        flex-direction: column !important;
+    }
+    .header .nav{
         display: block;
     }
     .header li{
@@ -98,7 +124,4 @@
         border-radius: 5px;
     }
 
-    .button_header{
-        display: none  !important;
-    }
 }

@@ -9,6 +9,7 @@ function Contacts() {
   return (
     <div className='contacts' id='contact_me'>
       <h2 className='contacts_title'>Contacts</h2>
+      <p>Lists of my socials: </p>
         <ul>
         
         {my_contacts.map((item, index) => {

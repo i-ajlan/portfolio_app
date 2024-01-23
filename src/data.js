@@ -3,6 +3,9 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import { Icon36LogoVk } from '@vkontakte/icons';
+import chatAppImg from './images/chatAppImg.png'
+import instaLikeImg from './images/instaLikeImg.png'
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 export const about_me =[
     {
@@ -11,7 +14,7 @@ export const about_me =[
     },
     {
         title: 'Competences',
-        info: 'I master some technologies like HTML, CSS, JavaScript,React.js, Node.js, MongoDB and so on... In the projects section I listed some projects that can confirm my competence with those technologies. I have also a good background in terms of foreign languages since I master Haitian Creole, French and English. I also know the russian language not in an advanced level but I can conversate with russian native without problem.'
+        info: 'I master some technologies like HTML, CSS, JavaScript, typeScript, React.js, Node.js, MySQL, PostgreSQL, MongoDB, Postman and so on... In the projects section I listed some projects that can confirm my competence with those technologies. I have also a good background in terms of foreign languages since I master Haitian Creole, French and English. I also know the russian language in a B2 level.'
     },
     {
         title: 'goals',
@@ -24,21 +27,27 @@ export const my_projects = [
     {
         title: 'MyPortfolio(This website)',
         link: '',
-        source: 'kdjlfj',
+        frontend_link: '',
+        backend_link:'',
+        image:'',
         technologies:['React.js', 'material-ui']
 
     },
     {
         title: 'chat_app',
-        link: 'klljljl',
-        source:'kdlfk',
-        technologies:['']
+        link: 'https://i-ajlan.github.io/chat_app_frontEnd/',
+        frontend_link:'https://github.com/i-ajlan/chat_app_frontEnd',
+        backend_link:'https://github.com/i-ajlan/chat_app_api',
+        image:chatAppImg,
+        technologies:['react','vite','supabase', 'node', 'express', 'socket.io']
     },
     {
-        title: 'Instagram_clone',
-        link: 'klljljl',
-        source:'kdlfk',
-        technologies:['']
+        title: 'Insta_like',
+        link: 'https://i-ajlan.github.io/insta-like/',
+        frontend_link:'https://github.com/i-ajlan/insta-like',
+        backend_link:'',
+        image:instaLikeImg,
+        technologies:['React.js', 'vite', 'React-router-dom']
     },  
 ]
 
@@ -47,27 +56,17 @@ export const my_contacts = [
     {
         title: 'GitHub',
         Icon: <GitHubIcon fontSize='large' sx={{color:'orange'}}/>,
-        link: '',
+        link: 'https://github.com/i-ajlan',
     },
     {
-        title: 'WhatsApp',
-        Icon: <WhatsAppIcon fontSize='large' sx={{color:'orange'}}/>,
-        link: '',
-    },
-    {
-        title: 'LinkedIn',
-        Icon: <LinkedInIcon fontSize='large' sx={{color:'orange'}}/>,
-        link: '',
-    },
-    {
-        title: 'Gmail',
-        Icon: <EmailIcon fontSize='large' sx={{color:'orange'}}/>,
-        link: '',
+        title: 'Telegram',
+        Icon: <TelegramIcon fontSize='large' sx={{color:'orange'}}/>,
+        link: 'https://t.me/ajlan_leo',
     },
     {
         title: 'VK',
         Icon: <Icon36LogoVk color='orange'/>,
-        link: '',
+        link: 'https://vk.com/id678759136',
     },
 
 ]

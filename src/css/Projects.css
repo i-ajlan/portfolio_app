@@ -1,78 +1,108 @@
 .projects{
     min-height: 100vh;
-
-}
-
-.project{
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    margin-bottom: 0;
-    background-color: white;
     font-size: 1.5em;
-    transition: all 0.2s ease-in-out;
 }
 
-.projects h2{
+.projects  h2{
+    text-align: center;
+    background-color: red;
     color: white;
+    border-radius: 15px;
 }
 
-.project_title{
-    /* background-image: radial-gradient(circle at top left, yellow, rgb(255, 165, 0) 10%);
-        background-clip: text;
-        color: transparent;
-        font-size: 1.5em; */
+.project {
+    padding: 2px;
+    /* position:relative; */
+    border-bottom: 2px solid;
+    transition:all 0.5s ease-in-out ;
 }
 
-.project:nth-child(2){
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-   
-}
+.project_title {
+    /* display: inline; */
+    width: fit-content;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(0);
 
-.project:last-child{
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
-
 
 .project:hover{
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    /* background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent); */
-    /* background-color: white; */
-    /* background-color: black;
-    color:white; */
+    /* transform: scaleY(1.2); */
     border-radius: 10px;
-    transform: scaleY(1.05);
-    border: 5px solid;
-        border-image-source: linear-gradient(to bottom right, yellow, orange, transparent, transparent, transparent, orange, yellow);
-        border-image-slice: 1;
+    box-shadow: 0 0 10px;
+    background-color: white;
+    border: 2px solid red;
+}
+.project:hover > .project_title{
+    margin-left: 50%;
+    color: red;
+    transform: translate(-50%);
+    border-bottom: 2px solid red;
+}
+.image_container{
+    width: 200px;
+    height: 300px;
 
-        & .project_title{
-            
-            /* border-bottom: 5px solid;
-                border-image-source: linear-gradient(to bottom right, yellow, orange, transparent, transparent, transparent, orange, yellow);
-                border-image-slice: 1; */
-        }
 }
 
-.project a{
-    color: orange;
+.image_container img{
+    width: 100%;
+    height: 100%;
+    border-radius:20px;
+    object-fit: cover;
+    border: 20px solid black;
 }
-.project_title {
-    font-size: 1.5em;
-    margin-left: 10px;
-    letter-spacing: 2px;
-}
-
-.project ul {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.project ul li{
-    list-style-type: none;
-    border: 1px black solid;
-    border-radius: 7px;
-    background-color: darkgray;
+.not_show{
+    visibility: hidden;
+    height: 0;
     
 }
+
+.show_div{
+    visibility: visible;
+    /* transition: all 0.5s ease-in-out; */
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showDivAnim 1s linear forwards ;
+}
+@keyframes showDivAnim{
+    50%{
+        height: 100px;
+        opacity: 0.5;
+    }
+    75%{
+        height: 250px;
+        opacity: 0.75;
+    }
+    100% {
+        height: auto;
+        opacity: 1;
+        /* overflow: auto; */
+    }
+}
+
+.project_info{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.project_link button{
+    color: white;
+    background-color: greenyellow;
+    border: 2px solid white;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 15px;
+}
+/* .project::before{
+    content:'Click here';
+    position:absolute;
+    top: -100%;
+    background-color: white;
+    font-size: 0.75em;
+    border-radius: 4px;
+    color:black;
+    box-shadow: 0 0 5px black;
+} */

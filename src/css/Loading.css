@@ -1,4 +1,5 @@
-.loading_section,
+/* .loading_section, */
+.loader,
 .loader::before,
 .loader::after {
     animation-duration: 2s;
@@ -10,6 +11,7 @@
     display: grid;
     place-content: center;
     height: 100vh;
+    animation-name:bgColorChange;
 }
 
 .loader {
@@ -20,6 +22,7 @@
     position: relative;
     transform: rotate(45deg);
     background: white;
+    animation-name:bgColorChange;
 }
 
 
@@ -43,11 +46,48 @@
     display: grid;
     place-content: center;
     transform: rotate(-45deg);
-    animation-name: percentage;
-    animation-duration: 1s;
+    animation-name: percentage,colorChange;
+    /* animation-duration: 1s; */
 }
 
-
+@keyframes bgColorChange{
+    0% {
+            background-color: white;
+        }
+    
+        25% {
+            background-color: black;
+        }
+    
+        50% {
+            background-color: white;
+        }
+    
+        75% {
+            background-color: black;
+        }
+    
+        100% {
+            background-color: white;
+        }
+}
+@keyframes colorChange{
+    0%{
+        color:white;
+    }
+    25%{
+        color:black;
+    }
+    50%{
+        color:white;
+    }
+    75%{
+        color:black;
+    }
+    100%{
+        color:white;
+    }
+}
 
  @keyframes percentage {
      0% {
@@ -135,10 +175,12 @@
     }
 
     75% {
-        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+        border-color: white;
     }
 
     100% {
-        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+        border-color: black;
     }
 }

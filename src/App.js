@@ -1,5 +1,7 @@
 import { useState, useEffect} from 'react';
 import {Contacts, Loading, Welcome, AboutMe, Projects, Header} from './components';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { IconButton } from '@mui/material';
 
 function App() {
 
@@ -9,14 +11,14 @@ function App() {
   
   const [top, setTop] = useState(null);
   
-  //  useEffect(()=>{
-  //  setTimeout(()=>setIsLoading(false), 3000)
-    
-  // },[])
+   useEffect(()=>{
+   const timeOutObj = setTimeout(()=>setIsLoading(false), 2000)
+    return ()=>clearTimeout(timeOutObj)
+  },[])
    
    const handleScroll = () => {
-     console.log("work");
-     console.log(top)
+    //  console.log("work");
+    //  console.log(top)
      if (!top) return;
      let y1 = top.getBoundingClientRect().y;
    
@@ -41,18 +43,23 @@ function App() {
     {isLoading ? <Loading/>
     :
   <div>
-    <Header/>
     
-    <Welcome />
+    <Welcome >
+      <Header/>
+    </Welcome>
   
     <AboutMe setTop={setTop}/>
   
     <Projects />
   
     <Contacts />
-    <button style={{position:'fixed', bottom:'30px', right:'30px', borderRadius:'50%', padding:'5px', display:`${display}`}}> <a href='#' style={{textDecoration:"none", color:'orange'}}>To the top</a></button>
+    <IconButton className='toTheTop' style={{position:'fixed', bottom:'30px', right:'30px',
+    backgroundColor: 'white',
+    width:'50px',
+    boxShadow: '0 0 5px',
+   borderRadius:'50%', padding:'5px', display:`${display}`}}> <a href='#' ><ArrowUpwardIcon/></a></IconButton>
    </div>
-     
+
         
       }
 

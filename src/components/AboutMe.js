@@ -16,6 +16,7 @@ export default function AboutMe({setTop}) {
 
   return (
     <div className='about_me' id='about_me'>
+
       <div className="about_me_body">
 
       <h2>About Me</h2>
