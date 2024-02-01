@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto&family=Satisfy&display=swap');
 
 .welcome{
-    height: 100vh;
+    /* --header-height:0; */
+    height: calc(100vh - calc(1px * var(--header-height)));
+    margin-top:calc(1px * var(--header-height));
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -16,6 +18,7 @@
     display: grid;
     width: 100%;
     align-items: center;
+    max-width: 760px;
 }
 
 
@@ -39,7 +42,7 @@
     overflow: hidden;
 }
 .welcome_sentences{
-    background: rgba(0, 0, 0, 0.1);
+    /* background: rgba(0, 0, 0, 0.1); */
     z-index: 100;
     border-radius: 10px;
     width: 100%;
@@ -47,10 +50,39 @@
     grid-column: 1/4;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;        
 }
 
+
+.welcome_sentences{
+    overflow: hidden;
+}
+
+.welcome_sentences p{
+    -webkit-text-stroke:2px red;
+    font-size: 8em;
+    text-wrap: nowrap;
+    animation: slide 10s infinite linear;
+    color:transparent;
+    width: max-content; 
+    /* transform: translate(-50%); */
+}
+
+.welcome_sentences p:nth-child(2){
+    -webkit-text-stroke:2px  green;
+    animation-duration: 20s;
+    
+}
+
+@keyframes slide {
+    to{
+        transform: translate(calc(-50% - 0.1em));
+    }
+}
+p{
+    /* line-height: 6; */
+}
 .img img {
     /* position: absolute; */
     width: 100%;
@@ -59,55 +91,17 @@
     object-fit: cover;
     transform: scale(1.05);
     filter: drop-shadow(5px 5px 5px black);
-    animation-name: normalScale;
 
 }
 
-@keyframes normalScale{
-    to{
-        border-radius: 25px;
-        transform: scale(1);
-    }
-}
 
 .welcome_body p{
     font-family: 'dancing script';
-    font-size: 1.50em;
-    opacity: 0;
+    /* font-size: 1.50em; */
 }
 
-.welcome_body p:first-child{
-    transform: translateY(-10px);
-    animation-delay: 1s;
-    animation-name: translateAnim;
-    font-weight: 700;
-    color: #f10238;
-}
 
-.welcome_body p:last-child{
-    transform: translateY(10px);
-    animation-delay:1s;
-    animation-name: translateAnim;
-    color: #28bd91;
-}
 
-@keyframes translateAnim {
-    to{
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-.img img, .welcome_body p:first-child, .welcome_body p:last-child{
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}
 
-/* @media (min-width: 600px) {
-    .img{
-        grid-column: 1/2;
-    }
-    .welcome_sentences{
-        grid-column: 2/-1;
-    }
-} */
+
+

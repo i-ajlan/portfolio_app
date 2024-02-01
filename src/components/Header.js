@@ -1,29 +1,39 @@
-import {useState, useEffect} from 'react'
+import {forwardRef, useState, useEffect} from 'react'
 import '../css/Header.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
+import profilePicture from '../images/profilePicture.png'
+const Header = forwardRef(({headerHeight}, ref) => {
 
-function Header() {
-
+    console.log('Head is rendered')
     const [isToggled,setIsToggled] = useState(false);
     const [display, setDisplay] = useState('hidden');
     const handleClick = (e) => {
-        console.log('Clicked')
+        // console.log('Clicked')
         e.preventDefault();
         const href = e.currentTarget.getAttribute('href');
         const elem = document.querySelector(href);
         window.scrollTo({
             left:0,
-            top: elem.offsetTop 
+            top: elem.offsetTop - headerHeight
         })
         setIsToggled(false)
     }
    
+    const header = document.querySelector('.header')
+    // useEffect(()=>{
+    //     if (!header) return;
+    //     setHeaderHeight(header.getBoundingClientRect().height)
+    // },[header]
+
+    // )
+   
+
     const handleScrollResize = () => {
-        const header = document.querySelector('.header')
-        console.log(header.getBoundingClientRect().bottom)
-        console.log(header.getBoundingClientRect().width)
-        console.log()
+        
+        // console.log(header.getBoundingClientRect().bottom)
+        // console.log(header.getBoundingClientRect().width)
+        // console.log()
         if(header.getBoundingClientRect().bottom <= 0 || window.innerWidth <= 700){
             setDisplay('visible')
         }else{
@@ -33,24 +43,28 @@ function Header() {
             setDisplay('hidden')
         }
     }
-    useEffect(()=>{
-        window.addEventListener('scroll', handleScrollResize);
-        return ()=> window.removeEventListener('scroll', handleScrollResize);
-    })
-    useEffect(()=>{
-        window.addEventListener('resize', handleScrollResize);
-        return ()=> window.removeEventListener('resize', handleScrollResize);
-    })
+    // useEffect(()=>{
+    //     window.addEventListener('scroll', handleScrollResize);
+    //     return ()=> window.removeEventListener('scroll', handleScrollResize);
+    // })
+    // useEffect(()=>{
+    //     window.addEventListener('resize', handleScrollResize);
+    //     return ()=> window.removeEventListener('resize', handleScrollResize);
+    // })
     
    
 
   return (
-<div className="header">
+<div className="header" ref={ref} >
     <div className="header_content">
 
             <div className="logo">
                 {/* <div> */}
-                    MyPortfolio
+                <figure className='logo__image'>
+                    <img src={profilePicture} alt="" />
+                </figure>
+                
+                    <p>MyPortfolio</p>
                 {/* </div> */}
 
             
@@ -75,6 +89,6 @@ function Header() {
             </IconButton>
     </div>
         </div>  )
-}
+})
 
 export default Header

@@ -7,8 +7,8 @@ import '../css/Contacts.css'
 function Contacts() {
   console.log("Hello from Contact");
   return (
-    <div className='contacts' id='contact_me'>
-      <h2 className='contacts_title'>Contacts</h2>
+    <div className='contacts section' id='contact_me'>
+      <h2 className='contacts_title section__title'>Contacts</h2>
       <p>Lists of my socials: </p>
         <ul>
         

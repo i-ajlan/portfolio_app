@@ -15,11 +15,11 @@ export default function AboutMe({setTop}) {
   },[])
 
   return (
-    <div className='about_me' id='about_me'>
+    <div className='about_me section' id='about_me'>
 
       <div className="about_me_body">
 
-      <h2>About Me</h2>
+      <h2 className='section__title'>About Me</h2>
         {about_me.map((item,index) =>{
             const {title, info} = item;
             return <div key={index}><div className={`about_me_title ${index === value &&'active_title'}`}

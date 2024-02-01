@@ -5,8 +5,8 @@ import '../css/Projects.css'
 export default function Projects() {
       const [value, setValue] = useState(null);
   return (
-    <div className='projects' id='my_projects'>
-      <h2>Projects</h2>
+    <div className='projects section' id='my_projects'>
+      <h2 className='section__title'>Projects</h2>
         {my_projects.map((item,index) =>{
             const {title, link, frontend_link, backend_link, image, technologies} = item;
             return <div key={index} className='project' onClick={()=>{index === value?setValue(null):setValue(index)}}>

@@ -5,16 +5,16 @@
     padding-top: 1%;
     padding-bottom: 1%;
     font-size: 1.25em;
+    display: flex;
+    justify-content: center;
+    /* max-width: 760px; */
 }
 
-.about_me h2{
-    padding: 15px;
-    background-color: #90d628;
-    color: white;
-    text-align: center;
-    border-radius: 15px;
-}
 
+
+.about_me_body{
+    max-width: 760px;
+}
 .about_me_title{
     text-transform: uppercase;
     letter-spacing: 0.25em;

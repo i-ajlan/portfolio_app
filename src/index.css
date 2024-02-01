@@ -4,7 +4,51 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: #d1f0d1;
+}
+
+.section{
+  background-color: white;
+  margin-bottom: 7px;
+  border-radius: 20px;
+  padding: 5px;
+  width: min(100%, 760px)!important;
+}
+
+.section__title{
+  text-align: center;
+  color: #d1f0d1;
+  margin-bottom: 5px;
+  font-size: 1.25em !important;
+  position: relative;
+  width:fit-content;
+  margin-left: 50%;
+  transform: translate(-50%);
+  transition: color 1s ease-in-out;
+}
+
+.section__title::before{
+  content: ' ';
+  /* width: 50px; */
+  height: 5;
+  inset: 0;
+  background-color: transparent;
+  border-bottom: 2px solid green;
+  position: absolute;
+  scale: 0 1;
+  transition: scale 1s ease-in-out ;
+}
+
+.section:hover .section__title{
+  color: green;
+}
+.section:hover .section__title::before{
+    scale: 1.5 1;
+}
+
 html{
   scroll-behavior: smooth;
   --min_width: 768px;
+  --header-height:0;
 }

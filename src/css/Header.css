@@ -1,28 +1,42 @@
 .header {
-    width: 100%;
     font-size: 1.5em;
+    position: fixed;
+    top:0;
+    width: min(760px, 100%);
+    z-index: 999;
+    background-color: white;
+  
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .header_content{
     display: flex;
     /* background-color: yellow; */
+    padding: 5px;
     justify-content: space-between;
+    
 }
+
 .header nav{
-    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
 }
 
-.button_header{
-    position: fixed !important; 
-    top: 0;
-    right: 0;
-    z-index: 999;
-}
+/* .header nav li {
+    color: transparent;
+    transition: all 0.25s ease-in-out;
+} */
 
-.show_nav{
-    display: block !important;
+.header nav.show_nav{
+    visibility: visible !important;
     /* position: absolute; */
+    opacity: 1;
     position: fixed;
+    height: auto;
     width: 200px;
     top: 50px;
     right: 25px;
@@ -32,6 +46,7 @@
     background-color: white;
     font-size: 1.25em;
 }
+
 .header ul {
     display: flex;
     flex-direction: column;
@@ -61,10 +76,34 @@
     letter-spacing: 0.15rem;
 }
 
-.logo {
+.logo{
+    display: flex;
+}
+.logo p {
     padding: 5px;
     font-size: 1.5em;
     transform: skewX(-25deg);
+}
+
+.logo__image{
+    height: 50px;
+    width: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+
+.logo__image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+.logo__image.visible{
+    visibility: visible;
+    width: 50px;
 }
 
 .header h1 {
@@ -93,12 +132,12 @@
         display: flex;
         justify-content: center;
     }
-    .logo{
+    /* .logo{
         display: block;
-    }
-    .header_Icon{
+    } */
+    /* .header_Icon{
         display: none !important;
-    }
+    } */
     .header_content{
         flex-direction: row;
         width: var(--min_width);
@@ -113,7 +152,10 @@
         flex-direction: column !important;
     }
     .header .nav{
-        display: block;
+        visibility: visible;
+        height: auto;
+        width: auto;
+        opacity: 1;
     }
     .header li{
         border: none;
@@ -124,4 +166,9 @@
         border-radius: 5px;
     }
 
+    .button_header{
+        visibility: hidden;
+        width: 0;
+        /* display: none; */
+    }
 }
